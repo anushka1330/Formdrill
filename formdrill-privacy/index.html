@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FormDrill — Privacy Policy</title>
+  <meta name="description" content="Official Privacy Policy for the FormDrill Chrome extension. FormDrill is a local-by-default, privacy-first application assistant.">
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --brand: #0f766e;
+      --brand-light: #ccfbf1;
+      --brand-dark: #115e59;
+      --tag-bg: #f1f5f9;
+      --placeholder-bg: #fef3c7;
+      --placeholder-border: #f59e0b;
+      --placeholder-text: #92400e;
+      --table-header: #f1f5f9;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #090d12;
+        --card-bg: #131b24;
+        --text: #f1f5f9;
+        --text-muted: #94a3b8;
+        --border: #243242;
+        --brand: #2dd4bf;
+        --brand-light: #133936;
+        --brand-dark: #5eead4;
+        --tag-bg: #1e293b;
+        --placeholder-bg: #451a03;
+        --placeholder-border: #d97706;
+        --placeholder-text: #fde68a;
+        --table-header: #1a2533;
+        --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+      }
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.65;
+      color: var(--text);
+      background-color: var(--bg);
+      padding: 32px 16px;
+    }
+
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      padding: 40px;
+    }
+
+    @media (max-width: 640px) {
+      body { padding: 16px 8px; }
+      .container { padding: 24px 18px; border-radius: 12px; }
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 24px;
+      margin-bottom: 28px;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      background: var(--brand-light);
+      color: var(--brand-dark);
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+
+    .meta-box {
+      background: var(--tag-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin-top: 16px;
+      font-size: 14px;
+      color: var(--text-muted);
+      display: grid;
+      gap: 6px;
+    }
+
+    .meta-box strong { color: var(--text); }
+
+    .placeholder {
+      display: inline-block;
+      background: var(--placeholder-bg);
+      color: var(--placeholder-text);
+      border: 1px dashed var(--placeholder-border);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--text);
+      margin: 32px 0 12px 0;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h3 {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text);
+      margin: 20px 0 8px 0;
+    }
+
+    p { margin-bottom: 14px; color: var(--text); }
+    p.lead { font-size: 16px; color: var(--text-muted); }
+
+    ul, ol {
+      margin-bottom: 16px;
+      padding-left: 24px;
+      color: var(--text);
+    }
+
+    li { margin-bottom: 8px; }
+    strong { color: var(--text); }
+
+    .callout {
+      background: var(--tag-bg);
+      border-left: 4px solid var(--brand);
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      margin: 20px 0;
+      font-size: 14px;
+    }
+
+    .table-responsive {
+      overflow-x: auto;
+      margin: 20px 0;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 14px;
+    }
+
+    th {
+      background: var(--table-header);
+      padding: 12px 14px;
+      font-weight: 600;
+      color: var(--text);
+      border-bottom: 1px solid var(--border);
+    }
+
+    td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-muted);
+      vertical-align: top;
+    }
+
+    tr:last-child td { border-bottom: none; }
+    td strong { color: var(--text); }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 13px;
+      background: var(--tag-bg);
+      padding: 2px 6px;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      margin-top: 36px;
+      padding-top: 20px;
+      font-size: 13px;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <span class="badge">Privacy First • Local by Default</span>
+      <h1>FormDrill Privacy Policy</h1>
+      <p class="lead">Official privacy disclosures and data handling specifications for the FormDrill Chrome extension.</p>
+
+      <div class="meta-box">
+        <div><strong>Effective Date:</strong> October 23, 2026</div>
+        <div><strong>Publisher / Developer:</strong> Anushka Sharma</div>
+        <div><strong>Support Email:</strong> <a href="mailto:annushkaa2604@gmail.com" style="color:inherit; text-decoration:underline;">annushkaa2604@gmail.com</a></div>
+        <div><strong>Website / Repository:</strong> <a href="https://anushka1330.github.io/formdrill-privacy/" target="_blank" rel="noopener noreferrer" style="color:inherit; text-decoration:underline;">https://anushka1330.github.io/formdrill-privacy/</a></div>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <h2>1. Overview &amp; Core Philosophy</h2>
+        <p>FormDrill is a client-side Google Chrome extension (Manifest V3) created to assist students, applicants, and job-seekers in completing lengthy, repetitive application forms (such as scholarships, fellowships, university admissions, clubs, and internships).</p>
+        
+        <div class="callout">
+          <strong>Core Privacy Principle:</strong> FormDrill runs 100% locally on your machine. Your personal qualifications and form answers belong solely to you. FormDrill never sells, collects, transmits, or centralizes user data.
+        </div>
+
+        <ul>
+          <li><strong>No Remote Data Transmission:</strong> FormDrill does not operate external databases or servers. No form contents or profile records are ever uploaded over the internet.</li>
+          <li><strong>No User Accounts or Registration:</strong> You do not need to register, create an account, or log in to use FormDrill.</li>
+          <li><strong>No Tracking or Telemetry:</strong> FormDrill contains zero advertising libraries, analytical tracking beacons, behavioral monitors, or crash telemetry scripts.</li>
+          <li><strong>No Cloud AI or Remote API Calls:</strong> FormDrill does not transmit your text to cloud AI endpoints. All field classification, word budgeting, outline generation, and consistency checks run entirely in your local browser runtime.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>2. Information Stored Locally on Your Device</h2>
+        <p>All information managed by FormDrill remains stored strictly in your browser's local sandbox via the Chrome Extension Storage API (<code>chrome.storage.local</code>). This data is never visible to or accessed by the developer or any third party:</p>
+
+        <h3>A. User Profile Information</h3>
+        <ul>
+          <li><strong>Personal &amp; Contact Details:</strong> Full name, first/last name, email address, phone number, date of birth, nationality, city, state/province, country, current address, permanent address, and postal code.</li>
+          <li><strong>Proficient Languages:</strong> Between 1 and 7 languages that you manually enter.</li>
+          <li><strong>Education Details:</strong> 10th and 12th Standard records (school name, board, stream, passing year, results/grades) and Higher Education details (institution, degree, major, graduation year, GPA).</li>
+          <li><strong>Certificates &amp; Supporting Documents:</strong> Certificate names, issuing organizations, and optional file attachments (images or PDFs up to 5 MB). Any attached file is converted into a local data URL and saved only on your device.</li>
+          <li><strong>Skills &amp; Categories:</strong> Skills categorized as Technical, Communication, Tools, or Practical.</li>
+          <li><strong>Hobbies &amp; Interests:</strong> User-added hobbies, categories, and achievements.</li>
+          <li><strong>Government &amp; Competitive Exams:</strong> Exam names, examination years, and optional scorecard document attachments.</li>
+          <li><strong>Work &amp; Experience:</strong> Company names, job titles, start/end dates, roles/responsibilities, and optional supporting document attachments.</li>
+          <li><strong>Online Profiles &amp; Links:</strong> LinkedIn, GitHub, portfolio websites, coding profile links, and custom URLs.</li>
+          <li><strong>General Details &amp; Custom Fields:</strong> Occupation, organization, designation, preferred contact/location, reusable short answers, and user-defined key-value fields.</li>
+          <li><strong>Facts &amp; Experiences:</strong> Verified or unverified bullet points entered to help generate structured essay outlines.</li>
+        </ul>
+
+        <h3>B. Form Progress Snapshots</h3>
+        <p>You can choose to save progress snapshots to resume multi-step forms or protect against session timeouts.</p>
+        <p><strong>Strict Sensitive-Data Exclusion:</strong> FormDrill automatically detects and strictly excludes sensitive elements from snapshots, including passwords, authentication tokens, CSRF tokens, credit card numbers, CVVs, expiration dates, social security numbers, and one-time passwords (OTPs).</p>
+
+        <h3>C. Drafts &amp; Settings</h3>
+        <ul>
+          <li>Essay outlines and written drafts you save for application prompts.</li>
+          <li>Extension preferences, such as first-run onboarding status.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>3. Web Page Access &amp; Permissions</h2>
+        <p>FormDrill requests only the minimal set of browser permissions necessary to perform its functions:</p>
+
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th style="width: 25%;">Permission</th>
+                <th>Purpose &amp; Scope</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>activeTab</code></td>
+                <td>Grants temporary access to read and populate form fields on the active webpage only when you explicitly invoke FormDrill by clicking its toolbar action or using the workspace. FormDrill never monitors background browsing and has no broad host permissions (such as <code>&lt;all_urls&gt;</code>).</td>
+              </tr>
+              <tr>
+                <td><code>scripting</code></td>
+                <td>Allows FormDrill to inject its local content scripts into the active tab on demand to scan form structure and write user-approved values.</td>
+              </tr>
+              <tr>
+                <td><code>storage</code></td>
+                <td>Enables saving your profile, drafts, progress snapshots, and preferences locally on your computer via <code>chrome.storage.local</code>.</td>
+              </tr>
+              <tr>
+                <td><code>sidePanel</code></td>
+                <td>Allows FormDrill to display its application workspace as a convenient side panel alongside the active form in supported versions of Chrome.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h2>4. How Web Page Data is Handled</h2>
+        <ul>
+          <li><strong>Scanning Form Fields:</strong> When you initiate a page scan, FormDrill inspects form inputs, accessible same-origin iframes, rich-text editors, and custom dropdowns to categorize them and determine match confidence. Labels and values are processed transiently in browser memory and are never persisted unless you save a progress snapshot or draft.</li>
+          <li><strong>Applying Autofill:</strong> FormDrill only writes values to fields that you review and confirm in the review checklist. FormDrill <strong>never automatically submits any form</strong> and never simulates clicks on submit buttons.</li>
+          <li><strong>Excluded Inputs:</strong> Password inputs, payment fields, file upload fields, and hidden security tokens are never scanned, planned, or populated.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>5. What FormDrill Does NOT Collect or Share</h2>
+        <ul>
+          <li>No personal data collection by the developer or any company.</li>
+          <li>No telemetry, diagnostic reports, or usage analytics.</li>
+          <li>No browsing history, cookies, or session identifiers.</li>
+          <li>No selling, renting, or monetization of user data.</li>
+          <li>No outbound network requests to any remote endpoint.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>6. User Control &amp; Data Retention</h2>
+        <p>You have full, autonomous control over all stored data directly in the <strong>Settings &amp; privacy</strong> tab of the FormDrill workspace:</p>
+        <ul>
+          <li><strong>Export Profile:</strong> Download your entire profile as a readable JSON file (<code>formdrill-profile.json</code>) to keep your own backups.</li>
+          <li><strong>Import Profile:</strong> Restore or migrate your profile from an existing JSON file at any time.</li>
+          <li><strong>Selective Deletion:</strong> Remove individual facts, profile entries, languages, education records, drafts, or snapshots whenever you wish.</li>
+          <li><strong>Delete All Data:</strong> A single button permanently clears all stored records from your browser via <code>chrome.storage.local.clear()</code>.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>7. Contact Information &amp; Developer Details</h2>
+        <p>If you have any questions, feedback, or concerns regarding this privacy policy or FormDrill's data practices, please reach out to:</p>
+        
+        <div class="meta-box">
+          <div><strong>Developer / Publisher:</strong> Anushka Sharma</div>
+          <div><strong>Contact Email:</strong> <a href="mailto:annushkaa2604@gmail.com" style="color:inherit; text-decoration:underline;">annushkaa2604@gmail.com</a></div>
+          <div><strong>Website / Repository:</strong> <a href="https://anushka1330.github.io/formdrill-privacy/" target="_blank" rel="noopener noreferrer" style="color:inherit; text-decoration:underline;">https://anushka1330.github.io/formdrill-privacy/</a></div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>FormDrill Privacy Policy</span>
+      <span>Published via GitHub Pages</span>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>FormDrill Advanced Forms: Iframes, Rich-Text, Custom Dropdowns</title>
+  <style>
+    body { font: 15px system-ui; max-width: 760px; margin: 0 auto; padding: 16px; }
+    label { display: block; margin: 10px 0 2px; font-weight: 500; }
+    input, textarea, select { width: 100%; padding: 8px; box-sizing: border-box; }
+    .editor { border: 1px solid #aaa; border-radius: 4px; min-height: 100px; padding: 8px; background: #fff; }
+    .combobox { position: relative; }
+    .combobox-input { border: 1px solid #aaa; border-radius: 4px; padding: 8px; cursor: pointer; background: #fff; }
+    .listbox { border: 1px solid #aaa; background: #fff; list-style: none; padding: 0; margin: 4px 0 0; position: absolute; width: 100%; z-index: 10; display: none; }
+    .listbox[data-open="true"] { display: block; }
+    .option { padding: 6px 10px; cursor: pointer; }
+    .option:hover, .option[aria-selected="true"] { background: #e0f2fe; }
+    iframe { width: 100%; height: 160px; border: 1px dashed #888; border-radius: 4px; margin-top: 8px; }
+    fieldset { margin: 16px 0; border: 1px solid #ccc; padding: 12px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <h1>Advanced Form Support Test Page</h1>
+
+  <!-- 1. Rich-Text Editor Form -->
+  <form id="richtext-form" onsubmit="event.preventDefault()">
+    <h2>Fellowship Application (Rich-Text Editor)</h2>
+    <label for="rt-name">Full name</label>
+    <input id="rt-name" name="fullName" autocomplete="name">
+
+    <label id="rt-essay-label">Describe your community leadership project (max 200 words)</label>
+    <div id="rt-editor"
+         class="editor"
+         contenteditable="true"
+         role="textbox"
+         aria-labelledby="rt-essay-label"
+         placeholder="Enter your response here..."></div>
+  </form>
+
+  <!-- 2. Accessible Custom Dropdown (ARIA Combobox / Listbox) -->
+  <form id="custom-dropdown-form" onsubmit="event.preventDefault()">
+    <h2>Academic Profile (Custom Dropdown)</h2>
+    <label id="cd-degree-label">Degree level</label>
+    <div class="combobox">
+      <div id="cd-combobox"
+           class="combobox-input"
+           role="combobox"
+           tabindex="0"
+           aria-labelledby="cd-degree-label"
+           aria-expanded="false"
+           aria-haspopup="listbox"
+           aria-controls="cd-listbox">Select degree...</div>
+      <ul id="cd-listbox" class="listbox" role="listbox" aria-labelledby="cd-degree-label">
+        <li id="opt-bs" role="option" class="option" data-value="Bachelor of Science" aria-selected="false">Bachelor of Science</li>
+        <li id="opt-ba" role="option" class="option" data-value="Bachelor of Arts" aria-selected="false">Bachelor of Arts</li>
+        <li id="opt-ms" role="option" class="option" data-value="Master of Science" aria-selected="false">Master of Science</li>
+      </ul>
+    </div>
+  </form>
+
+  <!-- 3. Embedded Accessible Iframe Form -->
+  <fieldset>
+    <legend>Embedded Verification Frame (Accessible Same-Origin Iframe)</legend>
+    <iframe id="test-frame" srcdoc="
+      <!doctype html>
+      <html>
+      <body style='font:14px system-ui;padding:8px;'>
+        <label for='if-email'>Institutional Email</label>
+        <input id='if-email' type='email' name='email' autocomplete='email' style='width:100%;padding:6px;box-sizing:border-box;'>
+      </body>
+      </html>
+    "></iframe>
+  </fieldset>
+
+  <script>
+    // Simple custom dropdown interactive behavior
+    const combo = document.getElementById('cd-combobox');
+    const listbox = document.getElementById('cd-listbox');
+    combo.onclick = () => {
+      const open = listbox.getAttribute('data-open') === 'true';
+      listbox.setAttribute('data-open', !open);
+      combo.setAttribute('aria-expanded', !open);
+    };
+    for (const opt of listbox.querySelectorAll('[role=option]')) {
+      opt.onclick = () => {
+        combo.textContent = opt.textContent;
+        listbox.setAttribute('data-open', 'false');
+        combo.setAttribute('aria-expanded', 'false');
+        for (const o of listbox.querySelectorAll('[role=option]')) o.setAttribute('aria-selected', 'false');
+        opt.setAttribute('aria-selected', 'true');
+        combo.dispatchEvent(new Event('input', { bubbles: true }));
+        combo.dispatchEvent(new Event('change', { bubbles: true }));
+      };
+    }
+  </script>
+</body>
+</html>

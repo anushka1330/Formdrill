@@ -1,0 +1,2 @@
+{ "name": "formdrill", "version": "0.1.0", "private": true, "description": "FormDrill Chrome extension",
+  "scripts": { "test": "node --test test/*.test.js", "check": "node scripts/check.js", "package": "node scripts/package.js" } }

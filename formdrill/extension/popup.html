@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FormDrill: Quick actions</title><link rel="stylesheet" href="style.css"></head>
+<body class="popup"><main>
+<header class="row between"><h1>FormDrill</h1><span id="privacy" class="pill"></span></header>
+<p id="status" role="status">Scanning this page…</p>
+<dl id="facts" class="kv" hidden><dt>Category</dt><dd id="cat"></dd><dt>Recognized</dt><dd id="count"></dd></dl>
+<section id="review" hidden aria-label="Autofill review"></section>
+<div class="stack">
+<button id="fill" class="primary" type="button" disabled>Review autofill</button>
+<button id="undo" type="button" disabled>Undo last fill</button>
+<div class="row"><input id="stepname" type="text" aria-label="Step label (optional)" placeholder="Step label, e.g. Step 2: Essays" maxlength="60"></div>
+<div class="row"><input id="snapname" type="text" aria-label="Snapshot name" maxlength="80"><button id="save" type="button" disabled>Save progress</button></div>
+<div class="row"><button id="profile" type="button">Profile</button><button id="workspace" type="button">Workspace</button></div>
+</div></main>
+<script src="core.js"></script><script src="shared.js"></script><script src="popup.js"></script></body></html>
